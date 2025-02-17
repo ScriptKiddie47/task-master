@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: task-master
+  data:
+    mongodb:
+      uri: ${db_connection_string}
+      database: ${db_name}
+  config:
+    import: optional:secrets.yaml

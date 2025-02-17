@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Task Master</title>
+	<script src="http://localhost:35729/livereload.js"></script>
+	<script th:src="@{/webjars/htmx.org/2.0.4/dist/htmx.min.js}" defer></script>
+	<link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+	<div class="header">
+		<h1>Task Master App</h1>
+	</div>
+
+	<div class="username">
+		<p th:text="${username}"></p>
+	</div>
+
+	<a href="./">
+		<button>Home</button>
+	</a>
+
+	<div id="homepage-buttons">
+
+		<button>View Assigned Tasks</button><br><br>
+		<button>View Created Tasks</button><br><br>
+		<button hx-get="/create-task" hx-target="#homepage-buttons" type="button" hx-indicator="#indicator">Create
+			Tasks</button><br><br>
+		<button>Groups</button>
+
+		<div><img id="indicator" class="htmx-indicator" src="./rocket.gif"></div>
+
+	</div>
+
+</body>
+
+</html>
